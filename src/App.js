@@ -55,10 +55,7 @@ function App() {
       mode: "no-cors",
       body: JSON.stringify(curPost),
     });
-    if (resp.status != 200) {
-      console.log(resp.ok);
-      console.error("Wrong status code.");
-    }
+    console.log(resp.statusText);
     setPosts((oldPosts) => [...oldPosts, curPost]);
     setCurPost(INITIALPOST);
     console.log(posts.length);
@@ -139,7 +136,7 @@ function App() {
       {/* Create overflow. */}
 
       <div className="overflow-y-auto max-h-120 overscroll-y-contain">
-        {posts.reverse().map((x) => {
+        {[...posts].reverse().map((x) => {
           return (
             <Message
               username={x.username}
