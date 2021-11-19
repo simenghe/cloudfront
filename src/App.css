@@ -24,6 +24,10 @@
   color: white;
 }
 
+.max-h-120 {
+  max-height: 34rem;
+}
+
 .App-link {
   color: #61dafb;
 }
